@@ -27,3 +27,4 @@ def day_view(request):
     #     template_name= "website/day.html"
     #     return render(request, template_name, {'data_set':data_set})
 
+#detailed dayview

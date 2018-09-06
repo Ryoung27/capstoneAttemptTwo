@@ -11,6 +11,9 @@
         <form action="{% url 'website:schedule_view' %}" method="get">
             <input type="submit" value="Schedule">
         </form>
+        <form action="{% url 'website:login' %}" method="get">
+            <input type="submit" value="Logout">
+        </form>
     {% else %}
     <form action="{% url 'website:login' %}" method="get">
             <input type="submit" value="Login">

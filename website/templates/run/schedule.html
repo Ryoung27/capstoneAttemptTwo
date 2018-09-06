@@ -1,6 +1,22 @@
-{% include "run/navbar.html" %}
-<div class='schedule'>
-<h1>Schedule</h1>
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Run for It</title>
+    </head>
+<body>
+    {% include "run/navbar.html" %}
+    <div class='schedule'>
+    <h1>Schedule</h1>
+    {% for schedule in schedules %}
+    <p>{{schedule.schedule}}</p>
+    {% endfor %}
 
-
+    <h2>Training Runs</h2>
+    {% for distance in day %}
+    <a href="{% url 'website:day_view' %}"><p>{{distance.distance}}</p></a>
+    {% endfor %}
+    <button type="submit" value="schedule.id" name="delete_product">Delete Schedule </button>
 </div>
+</body>

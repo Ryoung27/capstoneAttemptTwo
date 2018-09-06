@@ -12,6 +12,3 @@ from django.db import models
 class Day(models.Model):
     schedule = models.ForeignKey('Schedule', on_delete=models.CASCADE)
     distance = models.CharField(max_length=10)
-    thoughts = models.CharField(max_length=1000)
-    time = models.IntegerField()
-    created_at = models.DateTimeField(auto_now_add=True)
