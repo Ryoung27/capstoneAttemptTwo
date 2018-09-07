@@ -1,4 +1,4 @@
-# Welcome to Bangazon
+# Welcome to Run for It.
 
 This web application is the source code for the Bangazon e-commerce web site. It is powered by Python and Django.
 
