@@ -14,8 +14,8 @@
     {% endfor %}
 
     <h2>Training Runs</h2>
-    {% for distance in day %}
-    <a href="{% url 'website:day_view' %}"><p>{{distance.distance}}</p></a>
+    {% for day in days %}
+    <a href="{% url 'website:day_view' pk=day.id %}"><p>{{day.distance}}</p></a>
     {% endfor %}
     <button type="submit" value="schedule.id" name="delete_product">Delete Schedule </button>
 </div>

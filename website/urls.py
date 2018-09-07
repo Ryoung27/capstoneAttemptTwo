@@ -10,7 +10,7 @@ urlpatterns = [
     url(r'^login$', views.login_user, name='login'),
     url(r'^logout$', views.user_logout, name='logout'),
     url(r'^register$', views.register, name='register'),
-    url(r'day_view$', views.day_view, name='day_view'),
+    url(r'day_view/(?P<pk>\d+)/$', views.day_view, name='day_view'),
     url(r'schedule_view$', views.schedule_view, name='schedule_view'),
 ]
 

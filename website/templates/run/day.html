@@ -11,16 +11,29 @@
     <div class='days'>
     <h1>Day</h1>
     <h2>Have you ran today?</h2>
+    <h3>Distance Ran</h3>
+    <p>{{day.distance}}</p>
+    <h3>Time</h3>
+    <p>{{time}}</p>
+    <h3>Notes</h3>
+    <p>{{thoughts}}</p>
 
 
 
     <div>
-    <form action="" method="get">
-       Thoughts: <input type="text" name="thoughts" value="" size="1000" value="Submit">
-    </form>
-    <form action="" method="get">
-        Time:<input type="text" name="time" value="" size="1000" value="Submit">
-    </form>
+      <form id="DayForm" action="{% url 'website:day_view' pk=day.id%}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{Day_Form.as_p}}
+        <input type="submit" value="Submit"/>
+      </form>
+
+
+
+    <!-- <form method="post">
+       Thoughts: <input type="text" name="thoughts" value="anything" size="1000" value="Submit">
+        Time:<input type="text" name="time" value="anything" size="1000" value="Submit">
+        <button type="submit" value="anything" name="submitButton">Submit</button>
+    </form> -->
     </div>
 
 

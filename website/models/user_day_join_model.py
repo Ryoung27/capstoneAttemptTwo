@@ -13,6 +13,5 @@ from django.contrib.auth.models import User
 class Day_Join_Table(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     day = models.ForeignKey('Day', on_delete=models.CASCADE)
-    thoughts = models.CharField(max_length=1000)
+    thoughts = models.TextField(blank=True, null=True)
     time = models.IntegerField()
-    created_at = models.DateTimeField(auto_now_add=True)

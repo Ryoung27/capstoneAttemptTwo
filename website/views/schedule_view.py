@@ -22,6 +22,7 @@ def schedule_view(request):
 
     print(user_schedule[0])
     day_schedule = Day.objects.filter(schedule = user_schedule[0])
+    # new_day_schedule = day_schedule(pk=id)
     print(day_schedule)
 
     #perform the logic
@@ -29,7 +30,7 @@ def schedule_view(request):
 
     if request.method == "GET":
         # schedule = Schedule.objects.all()
-        return render(request, 'run/schedule.html', {"schedules": user_schedule, "day": day_schedule})
+        return render(request, 'run/schedule.html', {"schedules": user_schedule, "days": day_schedule})
 
     #Place holder text.
     # schedule = Schedule.objects.all()
