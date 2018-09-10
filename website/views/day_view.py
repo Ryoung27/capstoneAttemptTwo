@@ -6,8 +6,10 @@
 #     queryset = models.Day.objects.all()
 
 from django.shortcuts import render, get_object_or_404
-from website.models import Day, Day_Join_Table
+from website.models import Day
 from website.forms import DayForm
+from django.http import HttpResponseRedirect
+from django.urls import reverse
 
 def day_view(request, pk):
     """View for the day
@@ -19,8 +21,8 @@ def day_view(request, pk):
     #This is the start of hell
     if request.method == "GET":
         day = get_object_or_404(Day, pk=pk)
-        thoughts = Day_Join_Table.objects.filter(day_id = day.id)[0].thoughts
-        time = Day_Join_Table.objects.filter(day_id = day.id)[0].time
+        thoughts = Day.objects.filter(id = day.id)[0].thoughts
+        time = Day.objects.filter(id = day.id)[0].time
         Day_Form = DayForm()
         return render(request, 'run/day.html', {"day":day, "thoughts": thoughts, "time": time, "Day_Form": Day_Form})
     # Next hellzone. I need Kimmy or Joe's help with this.
@@ -38,7 +40,7 @@ def day_view(request, pk):
        form = DayForm(request.POST)
        form.data = request.POST
        form.save()
-       return  HttpResponseRedirect("{% url 'website:day_view' %}")
+       return  HttpResponseRedirect(reverse('website:day_view', args=(pk)))
 
 
 # if request.method == ‘GET’:

@@ -7,3 +7,6 @@ class UserForm(forms.ModelForm):
     class Meta:
         model = User
         fields = ('username', 'email', 'password')
+
+        def __str(self):
+            return f'{self.user.username}'
