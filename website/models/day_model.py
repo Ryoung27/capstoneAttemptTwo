@@ -1,6 +1,7 @@
 from django.db import models
-# from .schedule_model import Schedule
+from .schedule_model import Schedule
 # from .user_model import User
+from django.contrib.auth.models import User
 
 """
     module: Day Model
@@ -10,5 +11,8 @@ from django.db import models
 
 
 class Day(models.Model):
-    schedule = models.ForeignKey('Schedule', on_delete=models.CASCADE)
+    schedule = models.ManyToManyField('Schedule')
     distance = models.CharField(max_length=10)
+    user = models.ManyToManyField(User)
+    thoughts = models.TextField(blank=True, max_length=500)
+    time = models.IntegerField()
