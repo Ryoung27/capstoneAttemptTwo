@@ -16,3 +16,5 @@ class Schedule(models.Model):
     goal = models.IntegerField()
 # I REALLY do not want that to be a charfield, talk to Joe
 # Ask if I really want to delete cascade for user?
+    def __str__(self):
+        return self.schedule

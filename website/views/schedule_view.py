@@ -7,7 +7,7 @@
 
 
 from django.shortcuts import render
-from website.models import Schedule, Day
+from website.models import Schedule, Day, Profile
 # from django.contrib.auth.models import User
 
 def schedule_view(request):
@@ -17,13 +17,14 @@ def schedule_view(request):
         GET, returns render of template with information.
     """
     current_user = request.user
-    user_schedule = Schedule.objects.filter(user_id = current_user.id)
+    #profile = Profile.objects.all()
+    user_schedule = Schedule.objects.filter(user = current_user.id)
 
 
-    print(user_schedule[0])
+    # print(user_schedule[0])
     day_schedule = Day.objects.filter(schedule = user_schedule[0])
     # new_day_schedule = day_schedule(pk=id)
-    print(day_schedule)
+    # print(day_schedule)
 
     #perform the logic
     # current_schedule = next((schedule for schedule in user_schedule if schedule.user_id == User.id), User.id)
