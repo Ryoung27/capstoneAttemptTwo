@@ -18,11 +18,16 @@ def schedule_view(request):
     """
     current_user = request.user
     #profile = Profile.objects.all()
-    user_schedule = Schedule.objects.filter(user = current_user.id)
+    print(current_user.id)
+    profile = Profile.objects.filter(user_id = current_user.id)
 
 
     # print(user_schedule[0])
+
+    user_schedule = Schedule.objects.filter(id = profile[0].schedule_id)
+    print(user_schedule)
     day_schedule = Day.objects.filter(schedule = user_schedule[0])
+
     # new_day_schedule = day_schedule(pk=id)
     # print(day_schedule)
 

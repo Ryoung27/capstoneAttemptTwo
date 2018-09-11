@@ -11,8 +11,5 @@ from django.contrib.auth.models import User
 
 
 class Day(models.Model):
-    schedule = models.ManyToManyField('Schedule')
+    schedule = models.ForeignKey('Schedule', on_delete=models.CASCADE)
     distance = models.CharField(max_length=10)
-    user = models.ManyToManyField(User)
-    thoughts = models.TextField(blank=True, max_length=500)
-    time = models.IntegerField()
