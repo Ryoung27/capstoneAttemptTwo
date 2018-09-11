@@ -11,7 +11,7 @@ from django.contrib.auth.models import User
 
 
 class Schedule(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    # user = models.ForeignKey(User, on_delete=models.CASCADE)
     schedule = models.CharField(max_length=100)
     goal = models.IntegerField()
 # I REALLY do not want that to be a charfield, talk to Joe
