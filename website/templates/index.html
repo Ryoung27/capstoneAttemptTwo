@@ -7,13 +7,7 @@
   </head>
   <body>
     <h1>Run for It</h1>
-    {% if user.is_authenticated %}
     <h1>Welcome to Run for It {{ user.username }}!</h1>
     {% include "run/navbar.html" %}
-    <a href="{% url 'website:logout' %}">Logout</a>
-    {% else %}
-    <div><a href="{% url 'website:register' %}">Register</a></div>
-    <div><a href="{% url 'website:login' %}">Login</a></div>
-    {% endif %}
   </body>
 </html>

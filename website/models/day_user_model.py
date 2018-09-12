@@ -13,4 +13,6 @@ class Day_User(models.Model):
     day = models.ForeignKey("Day", on_delete=models.CASCADE)
     thoughts = models.TextField(blank=True, max_length=500)
     time = models.IntegerField()
+    def __str__(self):
+        return self.user.username
 # # I really need to speak to them about passwords on Tuesday
