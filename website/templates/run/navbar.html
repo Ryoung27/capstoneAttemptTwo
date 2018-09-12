@@ -1,15 +1,14 @@
-{% load static %}
+{% load staticfiles %}
 <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
 <nav class="nav_container">
     {% if user.is_authenticated %}
     <form action="{% url 'website:index' %}" method="get">
             <input type="submit" value="Home">
         </form>
-
         <form action="{% url 'website:schedule_view' %}" method="get">
             <input type="submit" value="Schedule">
         </form>
-        <form action="{% url 'website:login' %}" method="get">
+        <form action="{% url 'website:logout' %}" method="get">
             <input type="submit" value="Logout">
         </form>
     {% else %}
@@ -21,3 +20,5 @@
         </form>
     {% endif %}
 </nav>
+
+<!-- <a href="{% url 'website:logout' %}">Logout</a> -->

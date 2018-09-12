@@ -8,17 +8,23 @@
   </head>
   <body>
     {% include "run/navbar.html" %}
-    <div class='days'>
-    <h1>Day</h1>
-    <h2>Have you ran today?</h2>
-    <h3>Distance Ran</h3>
-    <p>{{day.distance}}</p>
-    <!-- <h3>Time</h3>
-    <p>{{time}}</p>
-    <h3>Notes</h3>
-    <p>{{thoughts}}</p> -->
+      <div class='days'>
+      <h1>Day</h1>
+      <h2>Have you ran today?</h2>
+      <h3>Distance Ran</h3>
+      <p>{{day.distance}}</p>
+      {{user_day}}
+      {% if user_day%}
+        <p>anything</p>
+        {% if user.id == user_day.user.id %}
+          <h3>Time</h3>
+          <p>{{user_day.time}}</p>
+          <h3>Notes</h3>
+          <p>{{user_day.thoughts}}</p>
+        {% endif %}
+      {% endif %}
 
-
+<!-- Check if there's a user_day.id at all -->
 
     <div>
       <form id="DayForm" action="{% url 'website:day_view' pk=day.id%}" method="POST" enctype="multipart/form-data">

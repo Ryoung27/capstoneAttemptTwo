@@ -1,0 +1,9 @@
+nav_container {
+    display: inline-block;
+}
+
+nav {
+    background-color: dimgrey;
+    padding: 20px;
+    margin: 0;
+}

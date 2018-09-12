@@ -17,6 +17,5 @@
     {% for day in days %}
     <a href="{% url 'website:day_view' pk=day.id %}"><p>{{day.distance}}</p></a>
     {% endfor %}
-    <button type="submit" value="schedule.id" name="delete_product">Delete Schedule </button>
 </div>
 </body>
