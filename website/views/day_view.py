@@ -34,17 +34,7 @@ def day_view(request, pk):
             return render(request, "run/day.html", {"day":day, "Day_Form": Day_Form} )
 
 
-    # Next hellzone. I need Kimmy or Joe's help with this.
-    # elif request.method == "POST":
-    #     data = Day_Join_Table(
-    #         user = request.user.id ,
-    #         day = request.Day.id,
-    #         time = request.POST['time'] ,
-    #         thoughts = request.POST['thoughts'],
-    #     )
-    #     form = DayForm(data=request.POST, files=request.FILES, instance = data)
-    #     form.save()
-    #Opition to hellzone.
+  #This needs to post to the join table of website_day_user
     elif request.method == "POST":
        form = DayForm(request.POST)
        form.data = request.POST

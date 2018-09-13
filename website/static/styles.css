@@ -1,9 +1,114 @@
-nav_container {
-    display: inline-block;
+nav {
+    background-color: black;
+    padding: 0px;
+    margin: 0;
 }
 
-nav {
-    background-color: dimgrey;
-    padding: 20px;
-    margin: 0;
+
+.indexHeader {
+    text-align: center;
+    font-family: 'Lobster', cursive;
+    font-size: 56px;
+    margin-top: 18%;
+}
+
+.loginHeader {
+    text-align: center;
+    font-family: 'Lobster', cursive;
+    font-size: 56px;
+}
+
+.registerHeader {
+    text-align: center;
+    font-family: 'Lobster', cursive;
+    font-size: 56px;
+}
+
+.scheduleHeader {
+    text-align: center;
+    font-family: 'Lobster', cursive;
+    font-size: 56px;
+}
+
+.schedule{
+    text-align: center;
+    font-size: 40px;
+    height:0;
+    width:100%;
+    border-bottom:1px solid black;
+}
+
+.bottomSchedule{
+    text-align: center;
+    font-size: 40px;
+    height:0;
+    width:100%;
+    border-bottom:1px solid black;
+}
+
+.scheduleLinks{
+    text-align: center;
+    display: inline-block;
+    margin: 32px;
+    text-decoration: none;
+    color: black;
+    font-size: 25px;
+}
+
+#login_form{
+    text-align: center;
+    border-style: solid;
+    border-width: 25px;
+    border: black;
+}
+
+#user_form{
+    text-align: center;
+    border-style: solid;
+    border-width: 25px;
+    border: black;
+}
+
+.dayHeader {
+    text-align: center;
+    font-family: 'Lobster', cursive;
+    font-size: 56px;
+}
+.days{
+    text-align: center;
+    margin-top: 32px;
+    border-color: black;
+    border: solid;
+    padding-bottom: 32px;
+}
+
+.loginBody{
+    text-align: center;
+    margin-top: 32px;
+    border-color: black;
+    border: solid;
+    padding-bottom: 64px;
+}
+
+#scheduleWhole{
+    text-align: center;
+    /* margin-top: 32px; */
+    /* border-color: black;
+    border: solid; */
+    padding-bottom: 64px;
+}
+
+.scheduleBody{
+    border: solid, black, 1px;
+}
+
+.miles{
+    font-size: 25px;
+    border: solid, black;
+}
+
+.borderBorder{
+    margin-top: 32px;
+    border: solid black;
+    text-align: center;
 }

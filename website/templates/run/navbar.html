@@ -2,13 +2,13 @@
 <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
 <nav class="nav_container">
     {% if user.is_authenticated %}
-    <form action="{% url 'website:index' %}" method="get">
+    <form class="homeButton" action="{% url 'website:index' %}" method="get">
             <input type="submit" value="Home">
         </form>
-        <form action="{% url 'website:schedule_view' %}" method="get">
+        <form class="scheduleButton" action="{% url 'website:schedule_view' %}" method="get">
             <input type="submit" value="Schedule">
         </form>
-        <form action="{% url 'website:logout' %}" method="get">
+        <form class="logoutButton" action="{% url 'website:logout' %}" method="get">
             <input type="submit" value="Logout">
         </form>
     {% else %}
@@ -21,4 +21,5 @@
     {% endif %}
 </nav>
 
-<!-- <a href="{% url 'website:logout' %}">Logout</a> -->
+
+

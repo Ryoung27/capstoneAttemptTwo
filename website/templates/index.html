@@ -1,13 +1,13 @@
-{% load staticfiles %}
+{% load static %}
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
     <title>Run for It</title>
   </head>
   <body>
-    <h1>Run for It</h1>
-    <h1>Welcome to Run for It {{ user.username }}!</h1>
     {% include "run/navbar.html" %}
+    <h1 class="indexHeader">Welcome to Run for It {{ user.username }}!</h1>
   </body>
 </html>
