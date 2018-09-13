@@ -5,44 +5,35 @@
   <head>
     <meta charset="utf-8">
     <title>Run for It</title>
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
   </head>
-  <body>
+  <body id="dayBody">
     {% include "run/navbar.html" %}
       <div class='days'>
-      <h1>Day</h1>
-      <h2>Have you ran today?</h2>
+      <h1 class="dayHeader">Day</h1>
       <h3>Distance Ran</h3>
       <p>{{day.distance}}</p>
-      {{user_day}}
       {% if user_day%}
-        <p>anything</p>
         {% if user.id == user_day.user.id %}
           <h3>Time</h3>
           <p>{{user_day.time}}</p>
           <h3>Notes</h3>
           <p>{{user_day.thoughts}}</p>
         {% endif %}
+        {% else %}
+        <h2>Have you run today?</h2>
+        <!-- <h3>Time</h3>
+        <p>{{user_day.time}}</p>
+        <h3>Thoughts</h3>
+        <p>{{user_day.thoughts}}</p> -->
+        <div>
+            <form id="DayForm" action="{% url 'website:day_view' pk=day.id%}" method="POST" enctype="multipart/form-data">
+              {% csrf_token %}
+              {{Day_Form.as_p}}
+              <input type="submit" value="Submit"/>
+            </form>
+          </div>
       {% endif %}
-
-<!-- Check if there's a user_day.id at all -->
-
-    <div>
-      <form id="DayForm" action="{% url 'website:day_view' pk=day.id%}" method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{Day_Form.as_p}}
-        <input type="submit" value="Submit"/>
-      </form>
-
-
-
-    <!-- <form method="post">
-       Thoughts: <input type="text" name="thoughts" value="anything" size="1000" value="Submit">
-        Time:<input type="text" name="time" value="anything" size="1000" value="Submit">
-        <button type="submit" value="anything" name="submitButton">Submit</button>
-    </form> -->
-    </div>
-
-
 </div>
 
     </body>
