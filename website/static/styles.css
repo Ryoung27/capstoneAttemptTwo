@@ -4,12 +4,35 @@ nav {
     margin: 0;
 }
 
+.nav_container{
+    display: flex;
+}
+
+.homeButton{
+    padding: 30px;
+}
+
+.scheduleButton{
+    padding: 30px;
+    padding-left: 565px;
+}
+
+.logoutButton{
+    padding: 30px;
+    padding-left: 545px;
+}
+
+.indexBorder{
+    margin-top: 32px;
+    padding-bottom: 32px;
+    border: solid black;
+}
 
 .indexHeader {
     text-align: center;
     font-family: 'Lobster', cursive;
     font-size: 56px;
-    margin-top: 18%;
+    margin-top: 12%;
 }
 
 .loginHeader {
@@ -111,4 +134,12 @@ nav {
     margin-top: 32px;
     border: solid black;
     text-align: center;
+}
+
+.stayGold{
+    text-shadow:
+    -1px -1px 0 #CFB53B,
+    1px -1px 0 #CFB53B,
+    -1px 1px 0 #CFB53B,
+    1px 1px 0 #CFB53B;
 }

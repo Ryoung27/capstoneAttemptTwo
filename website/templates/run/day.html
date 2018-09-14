@@ -11,13 +11,13 @@
     {% include "run/navbar.html" %}
       <div class='days'>
       <h1 class="dayHeader">Day</h1>
-      <h3>Distance Ran</h3>
+      <h3>Distance Run</h3>
       <p>{{day.distance}}</p>
       {% if user_day%}
         {% if user.id == user_day.user.id %}
-          <h3>Time</h3>
+          <h3 class="stayGold">Time</h3>
           <p>{{user_day.time}}</p>
-          <h3>Notes</h3>
+          <h3 class="stayGold">Notes</h3>
           <p>{{user_day.thoughts}}</p>
         {% endif %}
         {% else %}
