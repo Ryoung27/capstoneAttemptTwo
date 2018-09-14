@@ -18,8 +18,9 @@ def day_view(request, pk):
         GET, returns render of template with information.
     """
     #Currently converting Day to Day_User
+    day = get_object_or_404(Day, pk=pk)
     if request.method == "GET":
-        day = get_object_or_404(Day, pk=pk)
+        # day = get_object_or_404(Day, pk=pk)
 
         user_day= Day_User.objects.filter(day=day.id, user=request.user)
         if user_day:
@@ -38,7 +39,10 @@ def day_view(request, pk):
     elif request.method == "POST":
        form = DayForm(request.POST)
        form.data = request.POST
-       form.save()
+       joinForm = form.save(commit=False)
+       joinForm.user = request.user
+       joinForm.day = day
+       joinForm.save()
        return  HttpResponseRedirect(reverse('website:day_view', args=(pk)))
 
 
