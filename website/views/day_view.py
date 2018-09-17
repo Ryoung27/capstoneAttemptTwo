@@ -26,9 +26,8 @@ def day_view(request, pk):
         if user_day:
             user_day= Day_User.objects.get(day=day.id, user=request.user)
             # user_day[0]
-            time = Day_User.objects.filter(id = day.id)[0].time
+            time = Day_User.objects.filter(day_id=day.id)[0].time
             Day_Form = DayForm()
-            print(request.user.id)
             return render(request, 'run/day.html', {"day":day, "user_day": user_day, "time": time, "Day_Form": Day_Form})
         else:
             Day_Form = DayForm()
@@ -43,6 +42,6 @@ def day_view(request, pk):
        joinForm.user = request.user
        joinForm.day = day
        joinForm.save()
-       return  HttpResponseRedirect(reverse('website:day_view', args=(pk)))
+       return  HttpResponseRedirect(reverse('website:day_view', args=[pk]))
 
 
