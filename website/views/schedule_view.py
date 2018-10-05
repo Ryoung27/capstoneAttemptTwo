@@ -1,11 +1,3 @@
-# from rest_framework import viewsets
-# from website import models
-
-
-# class Schedule_Viewset(viewsets.ModelViewSet):
-#     queryset = models.Schedule.objects.all()
-
-
 from django.shortcuts import render
 from website.models import Schedule, Day, Profile
 # from django.contrib.auth.models import User

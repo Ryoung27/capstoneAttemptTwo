@@ -1,7 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import User
-# from .user_model import User
-# from .day_model import Day
 
 """
     module: Schedule Model
