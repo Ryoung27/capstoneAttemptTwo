@@ -14,3 +14,6 @@ urlpatterns = [
     url(r'schedule_view$', views.schedule_view, name='schedule_view'),
 ]
 
+# The URLS that django links to, some formats call them paths
+# The urls all follow a similar pattern, with the exception being day view
+# which calls the particular view with PK.

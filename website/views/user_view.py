@@ -1,13 +1,9 @@
-# # from rest_framework import viewsets
-# # from website import models
-
-# # class User_Viewset(viewsets.ModelViewSet):
-# #     queryset = models.User.objects.all()
-
-
 from django.shortcuts import render
 # from website.models import User
 
+
+# This is the basic user view model.
+# it just takes in the user information and returns it.
 def user_view(request):
     """View for the day
 

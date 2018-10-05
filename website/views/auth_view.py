@@ -12,7 +12,10 @@ def index(request):
     template_name = 'index.html'
     return render(request, template_name, {})
 
-
+# Register determines weather we are creating a new user
+# or logging in. If we are creating a new user it will go
+# through POST. If it goes through GET it treats the user
+# as logged in.
 # Create your views here.
 def register(request):
     '''Handles the creation of a new user for authentication
@@ -52,6 +55,11 @@ def register(request):
         template_name = 'register.html'
         return render(request, template_name, {'user_form': user_form, 'profile_form': profile_form})
 
+
+# This handles login, this verifies that the users info
+# is in our database.
+# If it is the user is logged in, if not
+# it returns an incorrect error.
 
 def login_user(request):
     '''Handles the creation of a new user for authentication

@@ -8,3 +8,5 @@ obj
 *.sqlite3
 .vscode
 env
+
+# files that are ignored by git when we upload, saves from uploading a ton of files and dependencies at onces.

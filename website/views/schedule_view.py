@@ -10,6 +10,9 @@ from django.shortcuts import render
 from website.models import Schedule, Day, Profile
 # from django.contrib.auth.models import User
 
+
+# This code returns the schedule view, which is just all the days of the
+# schedule.
 def schedule_view(request):
     """View for the day
 
